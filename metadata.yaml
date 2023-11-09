@@ -1,0 +1,5 @@
+homepage: "https://www.yext.com"
+documentation: "https://hitchhikers.yext.com/docs/eventsapis"
+versions:
+  - sha: be51f00ff82df5a504aa9c4583b16848c50872e6
+    changeNotes: Initial release
