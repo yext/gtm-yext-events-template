@@ -14,7 +14,11 @@ ___INFO___
   "version": 1,
   "securityGroups": [],
   "displayName": "Yext Analytics Browser SDK",
-  "categories": ["ANALYTICS", "ATTRIBUTION", "CONVERSION"],
+  "categories": [
+    "ANALYTICS",
+    "ATTRIBUTION",
+    "CONVERSION"
+  ],
   "brand": {
     "id": "brand_dummy",
     "displayName": "",
@@ -489,7 +493,7 @@ const analyticsConfig = {
     region: data.partition
 };
 
-const scriptURL = 'https://assets.sitescdn.net/analytics/v1.0.0-beta.3/analytics.umd.js';
+const scriptURL = data.partition == 'US' ? 'https://assets.sitescdn.net/analytics/v1.0.0-beta.3/analytics.umd.js' : 'https://assets.eu.sitescdn.net/analytics/v1.0.0-beta.3/analytics.umd.js';
 
 // Used for converting custom event properties to json. Following the execution of this function, we have
 // a JSON object with all of the properties entered into the Custom Properties Param Table. Following this
@@ -608,45 +612,6 @@ ___WEB_PERMISSIONS___
                 "mapValue": [
                   {
                     "type": 1,
-                    "string": "analyticsEventPayload"
-                  },
-                  {
-                    "type": 8,
-                    "boolean": true
-                  },
-                  {
-                    "type": 8,
-                    "boolean": true
-                  },
-                  {
-                    "type": 8,
-                    "boolean": false
-                  }
-                ]
-              },
-              {
-                "type": 3,
-                "mapKey": [
-                  {
-                    "type": 1,
-                    "string": "key"
-                  },
-                  {
-                    "type": 1,
-                    "string": "read"
-                  },
-                  {
-                    "type": 1,
-                    "string": "write"
-                  },
-                  {
-                    "type": 1,
-                    "string": "execute"
-                  }
-                ],
-                "mapValue": [
-                  {
-                    "type": 1,
                     "string": "injectAnalytics"
                   },
                   {
@@ -686,7 +651,7 @@ ___WEB_PERMISSIONS___
                 "mapValue": [
                   {
                     "type": 1,
-                    "string": "config"
+                    "string": "analyticsEventPayload"
                   },
                   {
                     "type": 8,
@@ -698,46 +663,7 @@ ___WEB_PERMISSIONS___
                   },
                   {
                     "type": 8,
-                    "boolean": true
-                  }
-                ]
-              },
-              {
-                "type": 3,
-                "mapKey": [
-                  {
-                    "type": 1,
-                    "string": "key"
-                  },
-                  {
-                    "type": 1,
-                    "string": "read"
-                  },
-                  {
-                    "type": 1,
-                    "string": "write"
-                  },
-                  {
-                    "type": 1,
-                    "string": "execute"
-                  }
-                ],
-                "mapValue": [
-                  {
-                    "type": 1,
-                    "string": "AnalyticsSDK"
-                  },
-                  {
-                    "type": 8,
-                    "boolean": true
-                  },
-                  {
-                    "type": 8,
-                    "boolean": true
-                  },
-                  {
-                    "type": 8,
-                    "boolean": true
+                    "boolean": false
                   }
                 ]
               },
@@ -801,7 +727,7 @@ ___WEB_PERMISSIONS___
           "key": "environments",
           "value": {
             "type": 1,
-            "string": "all"
+            "string": "debug"
           }
         }
       ]
@@ -826,6 +752,10 @@ ___WEB_PERMISSIONS___
               {
                 "type": 1,
                 "string": "https://assets.sitescdn.net/analytics/*"
+              },
+              {
+                "type": 1,
+                "string": "https://assets.eu.sitescdn.net/analytics/*"
               }
             ]
           }
