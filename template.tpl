@@ -528,7 +528,7 @@ function convertUserInputToJson() {
 // Call SDK function from script stored in Window. This will call report() with the config and payloadJson
 // added to Window.analyticsEventPayload. This will also take care of converting user input to the correct type
 function report() {
-  callInWindow('AnalyticsSDK.analyticsGTM');
+  callInWindow('AnalyticsSDK.reportBrowserAnalytics');
 }
 
 // Check permissions on injectAnalytics function, add payload and config to window object.
@@ -560,7 +560,7 @@ if (queryPermission('access_globals', 'readwrite', 'injectAnalytics')) {
     data.gtmOnFailure();
 }
 
-// Inject script if we have permission. If injection is successful, will call 'AnalyticsSDK.analyticsGTM'
+// Inject script if we have permission. If injection is successful, will call 'AnalyticsSDK.reportBrowserAnalytics'
 // using analyticsEventPayload to report data using the Yext Events API.
 if (queryPermission('inject_script', scriptURL)) {
   injectScript(scriptURL, report, () => {
@@ -690,7 +690,7 @@ ___WEB_PERMISSIONS___
                 "mapValue": [
                   {
                     "type": 1,
-                    "string": "AnalyticsSDK.analyticsGTM"
+                    "string": "AnalyticsSDK.reportBrowserAnalytics"
                   },
                   {
                     "type": 8,
