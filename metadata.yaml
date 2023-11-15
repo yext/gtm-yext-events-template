@@ -2,6 +2,4 @@ homepage: "https://www.yext.com"
 documentation: "https://hitchhikers.yext.com/docs/eventsapis"
 versions:
   - sha: 46d103a1b9dc80f7bc197a364b5f1efdf62ae720
-    changeNotes: Remove unneeded permissions, support eu script tag, only log on debug & preview
-  - sha: 66ab5d0f02de11a76f2ac2b750fac7f7413eec7e
     changeNotes: Initial release
